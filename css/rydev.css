@@ -1,0 +1,151 @@
+html {scroll-padding-top: 5.75rem;}
+body {
+  min-height: 100vh;
+  padding-top: 5.75rem;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+  background-color: #f1f2f3;
+}
+
+#jumbo h1 {text-shadow: 0 2px 2px rgba(0,0,0,.2),-1px 0 0 #fff;color:#eee!important;font-weight: 300;}
+
+main, nav>.container-fluid, footer>.container-fluid {padding-left:1rem; padding-right:1rem;}
+
+@media (min-width: 1600px)
+	{
+	.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+		max-width: 1520px;
+	}
+}
+
+.navbar-nav .nav-link, .navbar-brand {font-weight:400; text-transform: uppercase; font-size: 1rem; letter-spacing: .05rem;position: relative;}
+
+#logo {margin-right:1rem}
+
+.min-vh-100-pd {min-height: calc(100vh - 6.75rem)!important; margin-top:1rem;}
+.min-vh-100-pd:first-child {margin-top:0;}
+
+#work .card-img-overlay {opacity:0; transition:opacity ease-in-out .2s;}
+#work .card {margin-top:0;transition:all ease-in-out .2s;}
+#work .row:hover .card {opacity:.5;}
+#work .card:hover {transition:all ease-in-out .2s; opacity: 1!important;}
+#work .card:hover .card-img-overlay, #work .card:focus .card-img-overlay {opacity:1; transition:opacity ease-in-out .2s;}
+
+.blockquote {font-style:italic; position: relative;}
+.blockquote::before {font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f10d"; position: absolute; top:-1rem; left:-2.5rem; color: #ff5500;font-size:2rem; font-style: normal;}
+.blockquote::after {font-family: "Font Awesome 6 Free"; font-weight: 900; content: "\f10e"; position: absolute; right: -2.5rem; bottom:0; color: #ff5500;font-size:2rem; font-style: normal;}
+
+#cube {position: relative;}
+.cheep {display:block; position:absolute; top:-4rem; left:-5rem; height: 5rem; width:10rem; color: #000; background-image: url("../img/word-bubble.svg"); background-size:100% 100%; background-repeat: no-repeat; text-align: center; padding-top:.75rem; opacity: 0; transition: all ease-in-out .2s; font-size: 40px;font-family: 'Montserrat', sans-serif;font-family: 'Shadows Into Light', cursive;}
+#cube:hover .cheep {opacity: 1; transition: all ease-in-out .2s; animation: cheepshake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);}
+
+#jumbo-variable::after {
+	content:"to make the rigid flexible\002e";
+	animation-name: head;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+	color:#eee;
+}
+
+#about video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+#about {position: relative; z-index:2; overflow: hidden;}
+#about .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+#about .container {z-index: 2}
+
+#jumbo {
+    background:linear-gradient(-45deg, #cd4180, #E4255F,#ff6600,#ffa329);
+    background-size: 400% 400%;
+    animation: gradient 120s ease infinite;
+}
+
+#work {}
+
+#self-portrait {position: relative;}
+#self-portrait .spdot {background:#fff; color: #000; display:block; position:absolute; width:2rem; height:2rem; text-align: center; border-radius: 1rem;padding-top: .25rem; font-weight: bold; box-shadow: inset 0 -1rem .5rem rgba(0,0,0,.2), 0 .25rem .25rem rgba(0,0,0,.4);transition:all ease-in-out .2s;}
+#self-portrait .spdot:hover, #self-portrait .spdot:focus {cursor:pointer; background:#eee;box-shadow: inset 0 -.5rem .25rem rgba(0,0,0,.2), 0 0 0 rgba(0,0,0,.4); transition:all ease-in-out .2s;}
+.spex-1 { top:20%; left:20%;}
+.spex-2 { top:50%; right:15%;}
+.spex-3 { top:80%; right:25% }
+
+.mh-50 {min-height:50vh;}
+
+.rounded-circle{
+	aspect-ratio: 1 / 1;
+}
+
+.carousel-control-prev {left: auto; right: 100%;}
+.carousel-control-next {right: auto; left: 100%;}
+
+.large-number {font-size: 8vw; line-height: 1; padding-top:4vw; padding-bottom: 4vw;}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes head {
+	0%    {content:"rigid seem flexible\002e";}
+	25% {content:"complicated seem simple\002e";}
+	50% {contet:"infrequent seem familiar\002e";}
+    75% {content:"mundane seem spectacular\002e";}
+	100% {content:"rigid seem flexible\002e";}
+}
+
+@media screen and (min-width: 769px) {
+	.navbar-nav .nav-link::after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom:0;
+  background: rgba(0,0,0,0);
+  right:50%;
+  left:50%;
+  width: auto;
+  height: 0;
+  transition:all ease-in-out .2s;
+  transition-delay: 1s;
+}
+.navbar-nav .nav-link.active::after {height: 1px; background:#000;left:.5rem;right:.5rem; transition:all ease-in-out .2s;transition-delay: 1s;}
+.navbar-nav .nav-link.icon-link::after{display:none!important;}
+}
+
+@media screen and (max-height: 667px) {
+	.min-vh-100-pd {min-height:calc(667px - 5.75rem)!important;}
+}
+
+@keyframes cheepshake {
+  10%, 90% {transform: translate3d(-1px, 0, 0);}
+  20%, 80% {transform: translate3d(2px, 0, 0);}
+  30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+  40%, 60% { transform: translate3d(4px, 0, 0);}
+}
